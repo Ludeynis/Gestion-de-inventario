@@ -1,0 +1,87 @@
+<h2>{{tituloFormulario()}}</h2>
+<form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+
+    <div class="campos-formulario">
+        <mat-form-field appearance="outline">
+            <mat-label>Nombre: </mat-label>
+            <input matInput type="text" formControlName="nombre">
+            @if (productForm.get('nombre')?.invalid && productForm.get('nombre')?.touched) {
+            <mat-error>El nombre es obligatorio</mat-error>
+            }
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Marca:</mat-label>
+            <input matInput type="text" formControlName="marca">
+            @if (productForm.get('marca')?.invalid && productForm.get('marca')?.touched) {
+            <mat-error>La marca es obligatoria</mat-error>
+            }
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Precio: </mat-label>
+            <input matInput type="number" formControlName="precio">
+            @if (productForm.get('precio')?.invalid && productForm.get('precio')?.touched) {
+            <mat-error>El precio es obligatorio</mat-error>
+            }
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Stock: </mat-label>
+            <input matInput type="number" formControlName="stock">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Descripción: </mat-label>
+            <textarea matInput formControlName="descripcion"></textarea>
+            @if (productForm.get('descripcion')?.invalid && productForm.get('descripcion')?.touched) {
+            <mat-error>La descripción es obligatoria</mat-error>
+            }
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Imagen: </mat-label>
+            <input matInput type="text" formControlName="imagen">
+
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Tipo de piel: </mat-label>
+            <input matInput type="text" formControlName="tipoPiel">
+            @if (productForm.get('tipoPiel')?.invalid && productForm.get('tipoPiel')?.touched) {
+            <mat-error>Tipo de piel es obligatorio</mat-error>
+            }
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Ingredientes: </mat-label>
+            <input matInput type="text" formControlName="ingredientes">
+            @if (productForm.get('ingredientes')?.invalid && productForm.get('ingredientes')?.touched) {
+            <mat-error>Los ingredientes son obligatorios</mat-error>
+            }
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Valoracion: </mat-label>
+            <input matInput type="number" formControlName="valoracion">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Categoria: </mat-label>
+            <mat-select name="categorias" formControlName="categoria">
+                <mat-option value="Limpiadores">Limpiadores</mat-option>
+                <mat-option value="Tonicos">Tonicos</mat-option>
+                <mat-option value="Serums">Serums</mat-option>
+                <mat-option value="Ampollas">Ampollas</mat-option>
+                <mat-option value="Cremas hidratantes">Cremas hidratantes</mat-option>
+                <mat-option value="Protectores solares">Protectores solares</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+
+        <button mat-raised-button color="primary" type="submit">Submit</button>
+        <a mat-button [routerLink]="['/product-list']">Cancelar</a>
+
+    </div>
+
+</form>

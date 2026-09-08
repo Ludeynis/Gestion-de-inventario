@@ -1,0 +1,25 @@
+<mat-card>
+
+    <a mat-button [routerLink]="['/product-list']">Volver a productos</a>
+
+    <h3>{{producto()?.nombre}}</h3>
+
+    <div class="detalle-contenido">
+
+        <div class="detalle-imagen">
+            <img [src]="producto()?.imagen" alt="Descripción de la imagen">
+        </div>
+
+        <div class="detalle-info">
+            <p>Marca: {{producto()?.marca}}</p>
+            <p>Categoria: {{producto()?.categoria}}</p>
+            <p>Precio: {{producto()?.precio}}</p>
+            <p>Stock: {{producto()?.stock}}</p>
+            <p>Tipo de piel: {{producto()?.tipoPiel}}</p>
+            <p>Valoración: {{producto()?.valoracion}}</p>
+            <p>Estado: {{producto()?.estado}}</p>
+        </div>
+    </div>
+    <p><strong>Descripción: </strong> {{producto()?.descripcion}}</p>
+    <p><strong>Ingredientes: </strong> {{producto()?.ingredientes}}</p>
+</mat-card>

@@ -1,0 +1,31 @@
+mat-card{
+    max-width: 900px;
+    margin: 24px auto;
+    padding: 24px;
+}
+
+.detalle-contenido{
+    display:flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.detalle-imagen {
+    flex: 1 1 300px;
+}
+
+.detalle-info{
+    flex: 1 1 300px;
+}
+
+mat-card > a[mat-button] {
+  width: 17%;
+  padding: 12px;
+}
+
+mat-card img{
+    border-radius: 12px;
+    max-height: 350px;
+    object-fit: cover;
+    width: 100%;
+}

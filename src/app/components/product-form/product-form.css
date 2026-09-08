@@ -1,0 +1,10 @@
+.campos-formulario{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 20px;
+}
+
+.campos-formulario mat-form-field {
+  flex: 1 1 250px;
+}
