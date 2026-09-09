@@ -13,8 +13,16 @@
     gap: 16px;
 }
 
-.contenedor-productos mat-card{
+.contenedor-productos mat-card {
     width: 300px;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.contenedor-productos mat-card-actions {
+    margin-top: auto;
+    margin-bottom: 10px;
 }
 
 .contenedor-productos mat-card img[mat-card-image]{
@@ -30,3 +38,4 @@
     margin-bottom: 10px;
     padding: 10px;
 }
+
