@@ -6,10 +6,10 @@ Permite gestionar un catálogo de productos con operaciones CRUD completas, bús
 
 Demo en vivo: https://gestiondeinventariok-bea.netlify.app/
 
-screenshots/listaProductos.png
-screenshots/detallesProducto.png
-screenshots/editar.png
-screenshots/dashboard.png
+![Lista de productos](screenshots/listaProductos.png)
+![Detalles del producto](screenshots/detallesProducto.png)
+![Editar producto](screenshots/editar.png)
+![Dashboard](screenshots/dashboard.png)
 
 Funcionalidades
 
