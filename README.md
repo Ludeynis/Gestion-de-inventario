@@ -50,6 +50,3 @@ Próximas mejoras
 Autora
 
 Ludeynis Gamez
-LinkedIn: linkedin.com/in/ludeynis-gamez-50b368361
-GitHub: github.com/Ludeynis
-Portfolio: portafolioludeynis.netlify.app
