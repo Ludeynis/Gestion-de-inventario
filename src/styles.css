@@ -1,1 +1,21 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --burdeos-oscuro: #52002C;
+  --burdeos: #9B3864;
+  --rosa: #D16F9A;
+  --blanco: #FFFFFF;
+  --gris-oscuro: #433F41;
+  --gris-claro: #6A6A6A;
+  --negro: #040302;
+
+  --fuente-titulos: 'El Messiri', serif;
+  --fuente-texto: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: var(--fuente-titulos);
+  color: var(--burdeos-oscuro);
+}
+
+body {
+  font-family: var(--fuente-texto);
+}

@@ -2,11 +2,13 @@ import { Component, inject, computed } from '@angular/core';
 import { ProductoService } from "../../services/producto-service";
 import { RouterLink } from "@angular/router";
 import { MatCardModule } from '@angular/material/card';
+import { CurrencyPipe } from '@angular/common';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @Component({
   selector: 'app-dashboard',
-  imports: [RouterLink, MatCardModule ],
+  imports: [RouterLink, MatCardModule, CurrencyPipe, MatIconModule],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css',
 })

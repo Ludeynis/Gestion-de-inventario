@@ -1,14 +1,36 @@
-:host{
+:host {
     display: block;
     padding: 24px;
 }
 
+.titulo {
+    margin: 0 0 20px;
+}
+
 .metricas {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 16px;
 }
 
-.metricas mat-card {
-    width: 220px;
+.cifra {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 8px 0 0;
+    color: var(--burdeos);
+    margin-bottom: 20px;
+}
+
+.etiqueta {
+    margin: 0;
+    color: var(--gris-claro);
+}
+
+mat-icon {
+    color: var(--rosa);
+}
+
+mat-card{
+    border-radius: 8px, 40px;
+    background-color: var(--blanco)
 }

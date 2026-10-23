@@ -26,21 +26,29 @@
 
     @for (producto of productosFiltrados(); track producto.id){
     <mat-card>
-        <img mat-card-image [src]="producto.imagen" alt="{{producto.nombre}}">
-
+        <a class="enlace-detalle" [routerLink]="['/product-detail', producto.id]">
+            <img mat-card-image [src]="producto.imagen" alt="{{producto.nombre}}">
+        </a>
         <mat-card-header>
             <mat-card-title>{{producto.nombre}}</mat-card-title>
             <mat-card-subtitle>Marca: {{producto.marca}}</mat-card-subtitle>
         </mat-card-header>
 
         <mat-card-content>
-            <p>Categoria: {{producto.categoria}}</p>
-            <p>Precio: {{producto.precio}}</p>
-            <p>Stock: {{producto.stock}}</p>
+            <p class="categoria">{{producto.categoria}}</p>
+            <p class="precio">{{producto.precio | currency:'EUR'}}</p>
+            <p class="stock">{{producto.stock}} en stock</p>
+
+            @if (producto.stock === 0) {
+            <span class="etiqueta-estado agotado">Agotado</span>
+            }@else if (producto.stock <= 3){ <span class="etiqueta-estado bajo">Stock bajo</span>
+                }@else{
+                <span class="etiqueta-estado">Disponible</span>
+                }
+
         </mat-card-content>
 
         <mat-card-actions>
-            <a mat-raised-button color="warn" [routerLink]="['/product-detail', producto.id]">Ver detalles</a>
             <a mat-button [routerLink]="['/product-form', producto.id]">Editar</a>
             <button mat-button (click)="eliminar(producto.id)">Eliminar</button>
         </mat-card-actions>

@@ -1,32 +1,35 @@
-<h3>Detalles de los productos </h3>
+<h2 class="titulo">Resumen del inventario</h2>
 
 <div class="metricas">
     <mat-card>
         <mat-card-content>
-            <h3>Total de productos</h3>
-            <p>Total de productos: {{totalProductos()}}</p>
+            <mat-icon>inventory_2</mat-icon>
+            <p class="cifra">{{ totalProductos() }}</p>
+            <p class="etiqueta">Total de productos</p>
         </mat-card-content>
     </mat-card>
 
     <mat-card>
         <mat-card-content>
-            <h3>Stock bajo</h3>
-            <p>Stock bajo: {{stockBajo()}}</p>
+            <mat-icon>warning</mat-icon>
+            <p class="cifra">{{ stockBajo() }}</p>
+            <p class="etiqueta">Stock bajo</p>
+        </mat-card-content>
+    </mat-card>
+
+    <mat-card class="alerta">
+        <mat-card-content>
+            <mat-icon>block</mat-icon>
+            <p class="cifra">{{ productosAgotados() }}</p>
+            <p class="etiqueta">Productos agotados</p>
         </mat-card-content>
     </mat-card>
 
     <mat-card>
         <mat-card-content>
-            <h3>Productos agotados</h3>
-            <p>Productos agotados: {{productosAgotados()}}</p>
+            <mat-icon>euro</mat-icon>
+            <p class="cifra">{{ valorTotal() | currency:'EUR' }}</p>
+            <p class="etiqueta">Valor total del inventario</p>
         </mat-card-content>
     </mat-card>
-
-    <mat-card>
-        <mat-card-content>
-            <h3>Valor total del inventario</h3>
-            <p>Valor de los productos en total: {{valorTotal()}}</p>
-        </mat-card-content>
-    </mat-card>
-
 </div>
