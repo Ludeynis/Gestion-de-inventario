@@ -9,10 +9,12 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { CurrencyPipe } from '@angular/common';
+import { MatChipsModule } from '@angular/material/chips';
+import { CATEGORIAS } from '../../models/producto';
 
 @Component({
   selector: 'app-product-list',
-  imports: [RouterLink, MatCardModule, MatButtonModule, MatIconModule, MatFormFieldModule, MatInputModule, MatSelectModule, CurrencyPipe],
+  imports: [RouterLink, MatCardModule, MatButtonModule, MatIconModule, MatFormFieldModule, MatInputModule, MatSelectModule, CurrencyPipe, MatChipsModule],
   templateUrl: './product-list.html',
   styleUrl: './product-list.css',
 })
@@ -36,5 +38,7 @@ export class ProductList {
       return coincideNombre && coincideCategoria;
     });
   });
+
+    categorias = CATEGORIAS;
 
 }

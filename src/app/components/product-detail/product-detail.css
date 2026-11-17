@@ -1,31 +1,73 @@
-mat-card{
-    max-width: 900px;
-    margin: 24px auto;
+:host {
+    display:block;
+    max-width: 1000px;
+    margin: 0 auto;
     padding: 24px;
 }
 
+mat-card{
+    padding: 24px;
+    background-color: var(--blanco);
+    border-radius: 24px;
+}
+
+.volver{
+    align-self: flex-start;
+    margin-left: -12px;
+}
+
 .detalle-contenido{
-    display:flex;
-    flex-wrap: wrap;
-    gap: 24px;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin: 16px 0 24px;
 }
 
-.detalle-imagen {
-    flex: 1 1 300px;
-}
-
-.detalle-info{
-    flex: 1 1 300px;
-}
-
-mat-card > a[mat-button] {
-  width: 17%;
-  padding: 12px;
-}
-
-mat-card img{
-    border-radius: 12px;
-    max-height: 350px;
-    object-fit: cover;
+.detalle-imagen img {
     width: 100%;
+    display: block;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 16%;
+}
+
+.marca{
+    margin: 0;
+    color: var(--gris-claro);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.85rem;
+}
+
+.detalle-info h2 {
+    margin: 4px 2 8px;
+    font-size: 1.8rem;
+    
+}
+
+.precio {
+    margin: 16px 0 4px;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--burdeos);
+}
+
+.stock{
+    margin: 0 0 25px;
+    color: var(--gris-claro);
+}
+
+.acciones a[mat-flat-button]{
+    --mat-button-filled-container-color: var(--burdeos);
+    --mat-button-filled-label-text-color: var(--blanco);
+    --mat-button-filled-container-shape: 999px;
+    --mat-button-filled-container-height: 44px;
+
+}
+
+@media (max-width: 700px) {
+    .detalle-contenido{
+        grid-template-columns: 1fr;
+    }
 }

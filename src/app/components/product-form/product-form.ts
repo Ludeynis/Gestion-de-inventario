@@ -1,7 +1,7 @@
 import { Component, inject, input, OnInit, computed } from '@angular/core';
 import { ReactiveFormsModule, FormGroup, FormControl, Validators } from '@angular/forms';
 import { ProductoService } from "../../services/producto-service";
-import { Categoria } from "../../models/producto";
+import { Categoria, CATEGORIAS } from "../../models/producto";
 import {Router, RouterLink} from '@angular/router';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -62,6 +62,7 @@ export class ProductForm implements OnInit {
 
   tituloFormulario = computed(() => this.id() ? 'Editar producto' : 'Crear producto');
 
+  categorias = CATEGORIAS;
 
 
   }

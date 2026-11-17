@@ -1,10 +1,39 @@
-.campos-formulario{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    padding: 20px;
+:host {
+  display: block;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 24px;
 }
 
-.campos-formulario mat-form-field {
-  flex: 1 1 250px;
+h2{
+  margin: 0 0 24px;
+}
+
+.campos-formulario{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.campo-ancho, 
+.acciones {
+  grid-column: 1/ -1;
+}
+
+.acciones {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.acciones button[mat-flat-button] {
+    --mat-button-filled-container-color: var(--burdeos);
+    --mat-button-filled-label-text-color: var(--blanco);
+    --mat-button-filled-container-shape: 999px;
+    --mat-button-filled-container-height: 44px;
+}
+
+.acciones a[mat-button] {
+    --mat-button-text-label-text-color: var(--gris-claro);
 }

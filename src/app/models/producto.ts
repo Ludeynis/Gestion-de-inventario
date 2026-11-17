@@ -1,6 +1,8 @@
 export type Estado = 'disponible' | 'agotado';
 
-export type Categoria = 'Limpiadores' | 'Tonicos' | 'Serums' | 'Ampollas' | 'Cremas hidratantes' | 'Protectores solares';
+export const CATEGORIAS = ['Limpiadores', 'Tonicos', 'Serums', 'Ampollas', 'Cremas hidratantes', 'Protectores solares'] as const;
+
+export type Categoria = typeof CATEGORIAS[number];
 
 export interface Producto {
     id: number;

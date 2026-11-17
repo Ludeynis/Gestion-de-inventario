@@ -1,25 +1,33 @@
 <mat-card>
 
-    <a mat-button [routerLink]="['/product-list']">Volver a productos</a>
+    <a mat-button class="volver" [routerLink]="['/product-list']">
+        <mat-icon>arrow_back</mat-icon> Volver a productos
+    </a>
 
-    <h3>{{producto()?.nombre}}</h3>
-
+    @if (producto(); as p){
     <div class="detalle-contenido">
-
         <div class="detalle-imagen">
-            <img [src]="producto()?.imagen" alt="Descripción de la imagen">
+            <img [src]="p.imagen" [alt]="p.nombre">
         </div>
 
         <div class="detalle-info">
-            <p>Marca: {{producto()?.marca}}</p>
-            <p>Categoria: {{producto()?.categoria}}</p>
-            <p>Precio: {{producto()?.precio}}</p>
-            <p>Stock: {{producto()?.stock}}</p>
-            <p>Tipo de piel: {{producto()?.tipoPiel}}</p>
-            <p>Valoración: {{producto()?.valoracion}}</p>
-            <p>Estado: {{producto()?.estado}}</p>
+            <p class="marca">{{p.marca}}</p>
+            <h2>{{p.nombre}}</h2>
+
+            <p class="precio">{{p.precio | currency: 'EUR'}}</p>
+            <p class="stock">{{p.stock}} en stock</p>
+
+            <div class="acciones">
+                <a mat-flat-button [routerLink]="['/product-form', p.id]">Editar</a>
+            </div>
         </div>
     </div>
-    <p><strong>Descripción: </strong> {{producto()?.descripcion}}</p>
-    <p><strong>Ingredientes: </strong> {{producto()?.ingredientes}}</p>
+
+    <p><strong>Tipo de piel:</strong> {{p.tipoPiel}}</p>
+    <p><strong>Descripción:</strong> {{p.descripcion}}</p>
+    <p><strong>Ingredientes:</strong> {{p.ingredientes}}</p>
+    }@else{
+        <p>Producto no encontrado.</p>
+    }
+
 </mat-card>

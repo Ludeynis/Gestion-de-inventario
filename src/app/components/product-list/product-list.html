@@ -2,24 +2,19 @@
 
 <div class="filtros">
 
-    <mat-form-field appearance="outline">
-        <mat-label>Buscar por nombre</mat-label>
-        <input matInput type="text" (input)="textoBusqueda.set($any($event.target).value)"
-            placeholder="Buscar por nombre">
-    </mat-form-field>
+    <div class="buscador">
+        <span class="icono-buscar">
+            <mat-icon>search</mat-icon>
+        </span>
+        <input type="text" placeholder="Buscar por nombre" (input)="textoBusqueda.set($any($event.target).value)">
 
-    <mat-form-field appearance="outline">
-        <mat-label>Categoría</mat-label>
-        <mat-select (selectionChange)="categoriaSeleccionada.set($event.value)">
-            <mat-option value="Limpiadores">Limpiadores</mat-option>
-            <mat-option value="Tonicos">Tonicos</mat-option>
-            <mat-option value="">Todas las categorías</mat-option>
-            <mat-option value="Serums">Serums</mat-option>
-            <mat-option value="Ampollas">Ampollas</mat-option>
-            <mat-option value="Cremas hidratantes">Cremas hidratantes</mat-option>
-            <mat-option value="Protectores solares">Protectores solares</mat-option>
-        </mat-select>
-    </mat-form-field>
+    </div>
+
+    <mat-chip-listbox aria-label="Filtrar por categoría" (change)="categoriaSeleccionada.set($event.value ?? '')">
+        @for(categoria of categorias; track categoria) {
+        <mat-chip-option [value]="categoria">{{categoria}}</mat-chip-option>
+        }
+    </mat-chip-listbox>
 </div>
 
 <div class="contenedor-productos">
@@ -50,8 +45,12 @@
         </mat-card-content>
 
         <mat-card-actions>
-            <a mat-button [routerLink]="['/product-form', producto.id]">Editar</a>
-            <button mat-button (click)="eliminar(producto.id)">Eliminar</button>
+            <a mat-icon-button aria-label="Editar" [routerLink]="['/product-form', producto.id]">
+                <mat-icon>edit</mat-icon>
+            </a>
+            <button mat-icon-button aria-label="Eliminar" (click)="eliminar(producto.id)">
+                <mat-icon>delete</mat-icon>
+            </button>
         </mat-card-actions>
     </mat-card>
 
